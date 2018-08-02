@@ -32,12 +32,15 @@ export default class Store {
   }
 
   @action check() {
-    this.data.map((dataset) => {
-      if (dataset.correct === dataset.active) {
-        this.allCorrect = true;
-      } else {
-        this.allCorrect = false;
-      }
-    })
+    const test = [];
+    this.data.filter(dataset => {
+      test.push(dataset.active === dataset.correct);
+    });
+
+    if (test.every(value => value === true)) {
+      this.allCorrect = true;
+    } else {
+      this.allCorrect = false;
+    }
   }
 }
