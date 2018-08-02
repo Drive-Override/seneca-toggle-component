@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+      "react"
+  ],
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "rules": {
+     "semi": 0
+  },
+  "overrides": [
+    {
+      "files": [""],
+      "excludedFiles": "*.test.js",
+      "rules": {
+        "quotes": [ 2, "single" ],
+        "no-console": 2
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "experimentalDecorators": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  }
+}
