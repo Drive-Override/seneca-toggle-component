@@ -36,6 +36,9 @@ export default class ToggleGroup extends Component {
               })
             }
           </div>
+          {
+            store.allCorrect && <h3 className={styles.message}>The answer is incorrect.</h3>
+          }
         </div>
       </div>
     )

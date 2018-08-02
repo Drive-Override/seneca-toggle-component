@@ -4,15 +4,21 @@ export default class Store {
   @observable data = [
     {
       id: 1,
-      answers: ['Option 1', 'Option 2'],
+      answers: ['Hot', 'Cold'],
       correct: 1,
-      active: 1,
+      active: 2
     },
     {
       id: 2,
-      answers: ['Queen Elizabeth', 'Charles Darwin'],
+      answers: ['Option 1', 'Option 2'],
       correct: 2,
-      active: 2,
+      active: 1
+    },
+    {
+      id: 3,
+      answers: ['active', 'not active'],
+      correct: 1,
+      active: 2
     }
   ]
   @observable allCorrect = false;

@@ -26,10 +26,10 @@ export default class Toggle extends Component {
 
     return (
       <div className={styles.container}>
-        <button className={cx(styles.toggle, { [styles.active]: true })}>
+        <button className={cx(styles.toggle, { [styles.active]: !this.props.store.allCorrect })}>
           <div
             className={cx(styles['answer-text'], {
-              [styles['text-inactive']]: this.toggleActive
+              [styles['text-inactive']]: this.props.active === 2
             })}
             onClick={this.toggle}
           >
@@ -37,7 +37,7 @@ export default class Toggle extends Component {
           </div>
           <div
             className={cx(styles['answer-text'], {
-              [styles['text-inactive']]: !this.toggleActive
+              [styles['text-inactive']]: this.props.active === 1
             })}
             onClick={this.toggle}
           >

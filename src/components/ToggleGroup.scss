@@ -13,6 +13,8 @@
   border-radius: 8px;
   box-shadow: 0 2px 12px 6px rgba(167, 196, 220, 0.5);
   background-image: linear-gradient(to bottom, #47e4c1, #07cddd);
+  display: flex;
+  flex-direction: column;
 }
 .toggles-container {
   flex-direction: column;
@@ -24,4 +26,13 @@
 }
 .toggles-incorrect {
   background-image: linear-gradient(to bottom, rgba(250, 145, 97, 0.7), rgba(247, 59, 28, 0.69));
+}
+.message {
+  width: 728px;
+  height: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
 }

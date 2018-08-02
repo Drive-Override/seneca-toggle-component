@@ -13,10 +13,6 @@ module.exports = merge(styles, {
     path: path.resolve(base, 'dist'),
     filename: 'bundle.js',
   },
-  node: {
-    dns: 'mock',
-    net: 'mock'
-  },
   module: {
     rules: [
       {
@@ -34,26 +30,6 @@ module.exports = merge(styles, {
             }
           }
         ]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf|pdf)$/,
-        use: {
-          loader: 'file-loader',
-        },
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'babel-loader'
-          },
-          {
-            loader: 'react-svg-loader',
-            options: {
-              jsx: true
-            }
-          }
-        ]
       }
     ]
   },
@@ -64,7 +40,7 @@ module.exports = merge(styles, {
     new HtmlWebpackPlugin({
       template: path.resolve(base, 'index.template.ejs'),
       filename: 'index.html',
-      title: 'Philipp Rost',
+      title: 'Seneca Test',
       inject: true,
     }),
     new MiniCssExtractPlugin({
