@@ -1,4 +1,4 @@
-import { observable, computed, action } from 'mobx';
+import { observable, action } from 'mobx';
 
 export default class Store {
   @observable data = [
@@ -25,7 +25,7 @@ export default class Store {
     })
   }
 
-  @computed get check() {
+  @action check() {
     this.data.map((dataset) => {
       if (dataset.correct === dataset.active) {
         this.allCorrect = true;

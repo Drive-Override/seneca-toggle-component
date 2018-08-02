@@ -17,7 +17,6 @@ export default class ToggleGroup extends Component {
   componentDidMount() {
     if (this.props.store) {
       this.isLoading = false;
-      console.log(this.props.store)
     }
   }
   render() {
@@ -29,7 +28,7 @@ export default class ToggleGroup extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className={cx(styles.container, {[styles['toggles-incorrect']]: false})}>
+        <div className={cx(styles.container, {[styles['toggles-incorrect']]: !store.allCorrect})}>
           <div className={styles['toggles-container']}>
             {
               store.data.map((dataset, index) => {

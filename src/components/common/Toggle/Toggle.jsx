@@ -1,30 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import cx from 'classnames'
 import styles from './Toggle.scss'
 
 @observer
 export default class Toggle extends Component {
-  @observable toggleActive = true;
   static propTypes = {
     answers: PropTypes.array.isRequired,
     active: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired,
     store: PropTypes.any
   }
-  initialState = {
-    active: this.props.active
-  }
   toggle = () => {
-    this.toggleActive = !this.toggleActive;
-
-    this.props.store.setActive(2, 2);
-  }
-  componentDidMount() {
-    // Set Initial State
-    this.initialState.active == 2 && this.toggle();
+    const flip = this.props.active === 1 ? 2 : 1;
+    this.props.store.data.map((dataset) => {
+      if (dataset.id === this.props.id) {
+        this.props.store.setActive(this.props.id, flip);
+      }
+    })
+    this.props.store.check();
   }
   render() {
     const { answers } = this.props
@@ -49,7 +44,7 @@ export default class Toggle extends Component {
             <p>{answers[1]}</p>
           </div>
           <div
-            className={cx(styles.slider, { [styles.right]: this.toggleActive })}
+            className={cx(styles.slider, { [styles.right]: this.props.active === 2 })}
           />
         </button>
       </div>
