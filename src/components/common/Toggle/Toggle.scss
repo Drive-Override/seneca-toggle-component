@@ -30,21 +30,16 @@
   flex: 1 1;
   margin: 0;
   padding: 0 10px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Seneca;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: .4px;
   text-align: center;
-  -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   color: rgba(0,0,0,.99);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+
   > p {
     margin: 15px 0;
   }

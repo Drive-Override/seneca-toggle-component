@@ -36,7 +36,8 @@ module.exports = {
           loader: 'sass-resources-loader',
           options: {
             resources: [
-              path.resolve(base, 'src/styles/vendor/reset.scss')
+              path.resolve(base, 'src/styles/vendor/reset.scss'),
+              path.resolve(base, 'src/styles/abstract/font.scss')
             ]
           }
         }],
